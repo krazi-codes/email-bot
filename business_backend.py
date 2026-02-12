@@ -1,6 +1,3 @@
-# Complete CP104 Style Python Code for Report System
-# Classes and Functions for Product, Customer, Order, and Employee
-
 class Product:
     def __init__(self, product_id, name, price):
         self.product_id = product_id
@@ -16,7 +13,6 @@ class Product:
     def get_price(self):
         return self.price
 
-    @staticmethod
     def search_product(products, product_id):
         for product in products:
             if product.get_product_id() == product_id:
@@ -39,7 +35,6 @@ class Customer:
     def get_email(self):
         return self.email
 
-    @staticmethod
     def search_customer(customers, customer_id):
         for customer in customers:
             if customer.get_customer_id() == customer_id:
@@ -59,8 +54,7 @@ class Order:
 
     def calculate_total(self):
         return self.product.get_price() * self.quantity
-
-    @staticmethod
+    
     def display_order(order):
         return f"Order ID: {order.get_order_id()}, Customer: {order.customer.get_name()}, Total: {order.calculate_total()}"
 
